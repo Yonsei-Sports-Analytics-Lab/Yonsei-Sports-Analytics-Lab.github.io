@@ -164,3 +164,67 @@
     max-width: 100%; /* 모바일에서는 이미지가 가로 꽉 차게 */
   }
 }
+
+/* 컨테이너 및 그리드 설정 */
+.sessions-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.session-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3열 그리드 */
+  gap: 30px;
+}
+
+/* 개별 세션 카드 스타일링 (위아래로 긴 형태) */
+.session-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 내용을 세로 중앙 정렬 */
+  align-items: center;     /* 내용을 가로 중앙 정렬 */
+  min-height: 350px;       /* 카드를 위아래로 길게 만듦 */
+  
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  
+  /* 부드러운 애니메이션 전환 효과 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* 호버(Hover) 이펙트 */
+.session-card:hover {
+  transform: translateY(-5px); /* 위로 10px 떠오름 */
+  box-shadow: 0 12px 20px rgba(0, 43, 92, 0.15); /* 네이비 톤이 섞인 깊은 그림자 */
+  background-color: #f4f8ff; /* 마우스 오버 시 아주 연한 파란색 배경으로 전환 */
+}
+
+/* 텍스트 스타일링 */
+.session-card h3 {
+  font-size: 1.8rem;
+  color: #002b5c;
+  margin: 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+.session-card p {
+  margin-top: 15px;
+  color: #666666;
+  font-size: 1rem;
+}
+
+/* 모바일 및 태블릿 화면을 위한 반응형 디자인 */
+@media (max-width: 900px) {
+  .session-grid {
+    grid-template-columns: 1fr; /* 화면이 좁아지면 1열로 변경 */
+  }
+  .session-card {
+    min-height: 200px; /* 모바일에서는 세로 길이를 조금 줄임 */
+  }
+}
