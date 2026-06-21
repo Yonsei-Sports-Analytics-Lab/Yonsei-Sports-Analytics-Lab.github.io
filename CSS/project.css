@@ -1,0 +1,102 @@
+/* 섹션 전체 레이아웃 */
+.projects-section {
+  padding: 60px 20px;
+  max-width: 1000px; /* 가독성을 위해 최대 너비를 조금 좁게 설정 */
+  margin: 0 auto;
+}
+
+/* 연도 헤더 스타일링 */
+.year-header {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #5b7cfa; /* 기존 YSAL 포인트 파란색 */
+  margin-bottom: 50px;
+}
+
+/* 개별 프로젝트 아이템 레이아웃 (Flexbox) */
+.project-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px; /* 이미지와 텍스트 사이 간격 */
+  margin-bottom: 50px; /* 프로젝트 간의 상하 간격 */
+}
+
+/* 왼쪽 이미지 영역 */
+.project-image {
+  flex-shrink: 0; /* 이미지가 찌그러지지 않도록 설정 */
+  width: 240px; /* 레퍼런스처럼 적당한 이미지 너비 고정 */
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px; /* 이미지를 약간 부드럽게 */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* 오른쪽 텍스트 영역 */
+.project-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 텍스트 세부 스타일링 */
+.project-title {
+  font-size: 1.25rem;
+  color: #5b7cfa; /* 제목 파란색 */
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.project-title:hover {
+  color: #002b5c; /* 마우스 오버 시 네이비색으로 변경 */
+  text-decoration: underline;
+}
+
+.project-members {
+  font-size: 1rem;
+  color: #333333;
+  margin: 0 0 6px 0;
+  line-height: 1.5;
+}
+
+/* 밑줄 친 멤버 이름 (주저자/팀장 표시용) */
+.project-members u {
+  text-decoration: underline;
+  text-decoration-color: #999;
+  text-underline-offset: 3px; /* 밑줄을 글씨에서 살짝 띄움 */
+}
+
+.project-venue {
+  font-size: 0.95rem;
+  color: #555555;
+  margin: 0;
+}
+
+/* 발표처 이름 강조 (이탤릭체 및 굵게) */
+.project-venue em {
+  font-style: italic;
+  font-weight: 600;
+  color: #222222;
+}
+
+/* 모바일 반응형 처리 (화면이 768px 이하일 때 위아래로 배치) */
+@media (max-width: 768px) {
+  .project-item {
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+  
+  .project-image {
+    width: 100%; /* 모바일에서는 이미지가 꽉 차게 */
+    max-width: 400px;
+  }
+}
