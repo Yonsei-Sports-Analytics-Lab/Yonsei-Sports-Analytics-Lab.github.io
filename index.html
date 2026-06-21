@@ -40,7 +40,7 @@
                     <a class="nav-projects" href="/projects">PROJECTS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-apply" href="#" id="btn-apply" target="_blank">APPLY</a>
+                    <a class="nav-apply dynamic-apply-link" href="#" target="_blank">APPLY</a>
                 </li>
                 
             <!-- <li class="nav-item dropdown">
@@ -179,7 +179,7 @@
                 YSAL은 스포츠 데이터 분석에 열정을 가진 모든 학회원을 환영합니다.<br>
                 함께 연구하고, 성장하며, 더 넓은 세상으로 나아가실 분들은 지금 바로 지원하세요!
             </p>
-            <a href="#" id="btn-apply" target="_blank" class="btn btn-light btn-lg font-weight-bold px-5 py-3 shadow">
+            <a href="#" target="_blank" class="btn btn-light btn-lg font-weight-bold px-5 py-3 shadow dynamic-apply-link">
                 지원하기 (APPLY) <i class="fas fa-paper-plane ml-2"></i>
             </a>
         </div>
@@ -192,7 +192,10 @@
     fetch('links.json')
         .then(response => response.json())
         .then(data => {
-            document.getElementById('btn-apply').href = data.applyForm;
+            const applyButtons = document.querySelectorAll('.dynamic-apply-link');
+            applyButtons.forEach(button => {
+                button.href = data.applyForm;
+            });
             document.getElementById('icon-insta').href = data.instagram;
         })
         .catch(error => console.error('링크 데이터를 불러오는데 실패했습니다:', error));

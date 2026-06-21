@@ -38,7 +38,7 @@
                     <a class="nav-projects" href="/projects">PROJECTS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-apply" href="#" id="btn-apply" target="_blank">APPLY</a>
+                    <a class="nav-apply dynamic-apply-link" href="#" target="_blank">APPLY</a>
                 </li>
                 
             <!-- <li class="nav-item dropdown">
@@ -82,7 +82,10 @@
     fetch('links.json')
         .then(response => response.json())
         .then(data => {
-            document.getElementById('btn-apply').href = data.applyForm;
+            const applyButtons = document.querySelectorAll('.dynamic-apply-link');
+            applyButtons.forEach(button => {
+                button.href = data.applyForm;
+            });
             document.getElementById('icon-insta').href = data.instagram;
         })
         .catch(error => console.error('링크 데이터를 불러오는데 실패했습니다:', error));
