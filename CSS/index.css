@@ -22,3 +22,145 @@
     align-self: center;
 }
 
+/* 컨테이너 및 그리드 설정 */
+.teams-section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* 개별 카드 스타일링 (a 태그용 스타일 추가) */
+.team-card {
+  display: block; /* a 태그를 블록 요소로 취급 */
+  text-decoration: none; /* 링크 밑줄 제거 */
+  color: inherit; /* 링크 기본 파란색 글씨 방지 */
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* 애니메이션 속성 추가 */
+}
+
+/* 마우스를 올렸을 때의 시각적 피드백 강화 */
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* 호버 시 그림자가 더 짙어지며 클릭 유도 */
+}
+
+.team-card h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #002b5c;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* 이미지 영역 설정 */
+.image-placeholder img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #f0f4f8;
+}
+
+/* 모바일 반응형 처리 */
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 섹션 전체 레이아웃 (가운데 정렬 및 여백) */
+.team-intro-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Flexbox를 이용한 좌우 배치 컨테이너 */
+.team-intro-container {
+  display: flex;
+  align-items: flex-start; /* 위쪽을 기준으로 정렬 */
+  gap: 50px; /* 이미지와 텍스트 사이의 간격 */
+}
+
+/* 왼쪽 이미지 영역 스타일링 */
+.intro-image {
+  flex: 1; /* 가용 공간의 1 비율 차지 */
+  max-width: 50%; /* 데스크탑에서는 가로의 절반까지만 차지하도록 설정 */
+}
+
+.intro-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* 레퍼런스 사진처럼 테두리를 부드럽게 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 약간의 그림자 추가 */
+}
+
+/* 오른쪽 텍스트 영역 스타일링 */
+.intro-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.intro-text h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #222222;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.intro-text h2 {
+  font-size: 1.4rem;
+  color: #5b7cfa; /* 레퍼런스의 파란색 포인트 컬러 */
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.intro-text p {
+  font-size: 1.05rem;
+  color: #555555;
+  line-height: 1.7; /* 가독성을 위한 줄 간격 */
+  margin-bottom: 20px;
+  word-break: keep-all; /* 한국어 단어가 잘리지 않도록 설정 */
+}
+
+/* 하단 '지원하기' 링크 스타일링 */
+.intro-text .apply-link {
+  display: inline-block;
+  color: #5b7cfa;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 10px;
+  font-size: 1.05rem;
+  transition: color 0.2s ease;
+}
+
+.intro-text .apply-link:hover {
+  text-decoration: underline;
+  color: #3a5bd9; /* 마우스 오버 시 조금 더 진한 파란색으로 변경 */
+}
+
+/* 모바일 및 태블릿 화면을 위한 반응형 디자인 (화면이 768px 이하일 때) */
+@media (max-width: 768px) {
+  .team-intro-container {
+    flex-direction: column; /* 세로 방향으로 배치 변경 */
+    gap: 30px;
+  }
+  
+  .intro-image {
+    max-width: 100%; /* 모바일에서는 이미지가 가로 꽉 차게 */
+  }
+}
