@@ -15,7 +15,7 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd">
         <img src="images/YSAL_logo_1.png" class="ysal_logo" alt="ysal_logo">
         <a class="navbar-logo" href="index.html">Yonsei Sports Analytics Lab</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +38,7 @@
                     <a class="nav-projects" href="/projects">PROJECTS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-apply" href="/apply">APPLY</a>
+                    <a class="nav-apply" href="#" id="btn-apply" target="_blank">APPLY</a>
                 </li>
                 
             <!-- <li class="nav-item dropdown">
@@ -56,16 +56,36 @@
                 <a class="nav-link disabled" href="#">Disabled</a>
             </li> -->
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
         </div>
-    </nav>
+    </nav> 
+    <div class="container mt-5 pt-4">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center mb-4 mb-md-0">
+                <img src="images/about_image.jpg" alt="About YSAL" class="img-fluid rounded shadow-sm">
+            </div>
+            
+            <div class="col-md-6">
+                <h3 class="font-weight-bold mb-3">ABOUT</h1>
+                <h4 class="mb-3 text-primary">Yonsei Sports Analytics Lab</h4>
+                <p class="text-muted" style="line-height: 1.8;">
+                    Yonsei Sports Analytics Lab(YSAL)은 연세대학교 최초의 스포츠 통계 분석 학회로, 통계적 이론과 방법에 기반하여 다양한 스포츠를 더 과학적으로 분석하는 프로젝트를 진행합니다.<br><br>
+                    현재 축구, 농구, 야구, e-sports 네 개의 팀으로 구성되어 있으며, 각 스포츠 구단 및 기업과의 적극적인 협업을 진행중에 있습니다. 지난 2026-1학기에는 서울 삼성 썬더스, 두산 베어스, 서울 시립 대학교 CIDA LAB과의 협업을 진행하였습니다. <br><br>
+                    스포츠 데이터 분석을 함께 공부하며 역량을 키울 열정 있는 지원자 분들을 기다리고 있습니다. 많은 지원 부탁드립니다. <br><a href="#" id="btn-apply" target="_blank">9기 지원하기</a>
+                </p>
+            </div>
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <h1>ABOUT</h1>
+    <script>
+    fetch('links.json')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('btn-apply').href = data.applyForm;
+            document.getElementById('icon-insta').href = data.instagram;
+        })
+        .catch(error => console.error('링크 데이터를 불러오는데 실패했습니다:', error));
+    </script>
 </body>
 </html>

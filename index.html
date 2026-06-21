@@ -16,10 +16,8 @@
 </head>
 
 <body>
-    <h1></h1>
-
     
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd">
         <img src="images/YSAL_logo_1.png" class="ysal_logo" alt="ysal_logo">
         <a class="navbar-logo" href="index.html">Yonsei Sports Analytics Lab</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +40,7 @@
                     <a class="nav-projects" href="/projects">PROJECTS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-apply" href="/apply">APPLY</a>
+                    <a class="nav-apply" href="#" id="btn-apply" target="_blank">APPLY</a>
                 </li>
                 
             <!-- <li class="nav-item dropdown">
@@ -60,19 +58,144 @@
                 <a class="nav-link disabled" href="#">Disabled</a>
             </li> -->
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
         </div>
     </nav>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- 홈 화면 사진 -->
     <div class="center_photo">
-        <img src="images/home_image.jpg" class="home-img">
+        <img src="images/main_image.jpg" class="home-img">
     </div>
+
+    <div class="container py-5 mt-5">
+        <div class="row text-center mb-5">
+            <div class="col-md-12">
+                <h2 class="font-weight-bold text-primary">Activity</h2>
+                <!-- <p class="text-muted">YSAL의 핵심 활동 분야</p>-->
+            </div>
+        </div>
+        
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+                <h4 class="font-weight-bold mb-3">스포츠 데이터 분석</h4>
+                <p class="text-muted px-2">
+                    야구, 축구 등 다양한 종목의 데이터를 수집하고 통계적으로 분석하여 팀 성과와 선수 퍼포먼스에 대한 새로운 인사이트를 도출합니다.
+                </p>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                <h4 class="font-weight-bold mb-3">세미나 및 학술 활동</h4>
+                <p class="text-muted px-2">
+                    정기적인 세미나와 워크숍을 통해 최신 스포츠 분석 방법론과 기술 트렌드를 학습하며, 함께 성장하고 지식을 공유합니다.
+                </p>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                <h4 class="font-weight-bold mb-3">학술 스터디</h4>
+                <p class="text-muted px-2">
+                    스포츠 데이터 분석에 필요한 학술적 지식과 학부 수업을 기반으로 다양한 스터디 모임을 운영하고 있습니다.<br>(2026-1 개설 스터디: 세이버 메트릭스, 데이터 시각화, AI, 통계학)
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-light py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-md-12">
+                    <h2 class="font-weight-bold text-primary">Projects</h2>
+                    <!-- <p class="text-muted">YSAL의 최신 프로젝트 결과물을 확인하세요.</p> -->
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card shadow-sm h-100">
+                        <img src="images/projects/8th_formation.png" class="card-img-top" alt="K리그 전술 분석 프로젝트">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title font-weight-bold">페이즈별 포메이션 추천 시스템</h5>
+                            <p class="card-text text-muted flex-grow-1">
+                                VAEP 지표로 선수 기여도를 정량화하고, 트래킹 데이터로 경기를 (빌드업/지공공격/지공수비/압박) 4가지 페이즈로 분류해 페이즈별 포메이션을 추천하는 알고리즘을 만들었습니다.
+                            </p>
+                            <a href="projects.html" class="btn btn-outline-primary btn-block mt-3">자세히 보기</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="card shadow-sm h-100">
+                        <img src="images/projects/8th_aging_curve.png" class="card-img-top" alt="타격 유형별 에이징 커브 분석">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title font-weight-bold">타격 유형별 에이징 커브 분석</h5>
+                            <p class="card-text text-muted flex-grow-1">
+                                K-means 클러스터링을 이용해 메이저리그 타자들의 유형을 분류한 뒤, 타격 유형에 따른 에이징 커브 시기 차이를 분석했습니다.
+                            </p>
+                            <a href="projects.html" class="btn btn-outline-primary btn-block mt-3">자세히 보기</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="card shadow-sm h-100">
+                        <img src="images/projects/8th_samsung_defending.png" class="card-img-top" alt="삼성 수비 분석">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title font-weight-bold">서울 삼성 썬더스 수비 분석</h5>
+                            <p class="card-text text-muted flex-grow-1">
+                                서울 삼성 썬더스의 25-26시즌 54경기 PBP 데이터를 기반으로 수비 분석을 진행하였습니다.
+                            </p>
+                            <a href="projects.html" class="btn btn-outline-primary btn-block mt-3">자세히 보기</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="card shadow-sm h-100">
+                        <img src="images/projects/8th_lol_indexing.png" class="card-img-top" alt="LOL 신규 성과지표">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title font-weight-bold">LOL 프로 경기 데이터 기반 신규 성과지표 개발</h5>
+                            <p class="card-text text-muted flex-grow-1">
+                                DPM, KDA와 같은 기존 지표를 기반으로 전술적 맥락을 반영한 희생 지수 등 새로운 성과지표를 만들었습니다.
+                            </p>
+                            <a href="projects.html" class="btn btn-outline-primary btn-block mt-3">자세히 보기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row text-center mt-5">
+                <div class="col-md-12">
+                    <a href="/projects" class="btn btn-primary btn-lg px-5 font-weight-bold">전체 프로젝트 보기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-primary py-5 text-white">
+        <div class="container text-center">
+            <h1 class="font-weight-bold mb-4">Recruiting</h1>
+            <p class="lead mb-5 px-md-5">
+                YSAL은 스포츠 데이터 분석에 열정을 가진 모든 학회원을 환영합니다.<br>
+                함께 연구하고, 성장하며, 더 넓은 세상으로 나아가실 분들은 지금 바로 지원하세요!
+            </p>
+            <a href="#" id="btn-apply" target="_blank" class="btn btn-light btn-lg font-weight-bold px-5 py-3 shadow">
+                지원하기 (APPLY) <i class="fas fa-paper-plane ml-2"></i>
+            </a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+    fetch('links.json')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('btn-apply').href = data.applyForm;
+            document.getElementById('icon-insta').href = data.instagram;
+        })
+        .catch(error => console.error('링크 데이터를 불러오는데 실패했습니다:', error));
+    </script>
 </body>
 </html>
